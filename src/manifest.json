@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Simple Autofill",
+  "version": "1.0.0",
+  "description": "Simple Chrome Extension to autofill",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options-ui.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./content-script.bundle.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+@use "../../common-style/variables";
+@use "../../common-style/mixins";
+
+.SettingsInput {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.DebugModeInput {
+  display: flex;
+  gap: 16px;
+
+  &__select {
+    @include mixins.FormContent();
+    @include mixins.FormContentFocus();
+  }
+}
+
+.AutofillList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__list {
+    display: contents;
+  }
+
+  &__item {
+    background-color: variables.$main-color-white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__item-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__add-button,
+  &__remove-button {
+    @include mixins.Button();
+    @include mixins.ButtonHover();
+  }
+}
+
+.AutofillDataInput {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 16px;
+  align-items: center;
+
+  &__input {
+    @include mixins.FormContent();
+    @include mixins.FormContentFocus();
+
+    &--invalid {
+      @include mixins.FormContent();
+      border-bottom-color: variables.$error-color;
+      background-color: variables.$error-color-light;
+    }
+  }
+}
+
+.URLTesterInput {
+  display: flex;
+
+  &__input {
+    flex: 1;
+
+    @include mixins.FormContent();
+    @include mixins.FormContentFocus();
+  }
+
+  &__select {
+    @include mixins.FormContent();
+    @include mixins.FormContentFocus();
+  }
+}

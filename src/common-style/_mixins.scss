@@ -1,0 +1,27 @@
+@use "./variables";
+
+@mixin FormContent {
+  background-color: #fff;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid variables.$main-color-light;
+}
+
+@mixin FormContentFocus {
+  &:focus {
+    border-bottom-color: variables.$main-color;
+  }
+}
+
+@mixin Button {
+  background-color: #fff;
+  border: 1px solid variables.$main-color-light;
+  transition: background-color 0.2s, border-bottom-color 0.2s;
+}
+
+@mixin ButtonHover {
+  &:hover {
+    border-bottom-color: variables.$main-color-dark;
+    background-color: variables.$main-color-light;
+  }
+}

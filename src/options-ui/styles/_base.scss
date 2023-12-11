@@ -1,0 +1,8 @@
+@use "../../common-style/variables";
+
+body {
+  font: 16px sans-serif;
+  color: variables.$main-color-dark;
+  width: 500px;
+  min-height: 400px;
+}
